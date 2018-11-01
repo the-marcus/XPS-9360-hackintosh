@@ -40,7 +40,7 @@ IOConsoleUsers: gIOScreenLockState 3, hs 0, bs 0, nov 0, sm 0x0
 <br>
 a.使用XPS9360.sh,它会自动注入codecommonder.kext和AppleHDA-ALC256.kext，你只要在ACPI里的SSDT-Config.aml中注入layoutid为2即可，同时删除kext/Other/AppleALC.kext。如果不改SSDT-Config.aml，会注入1,是没有声音的。这种方法会出现轻微的爆音，但其他方面都很完美，我不知道是不是只有我存在这个问题。
 <br>
-b.如果使用kext/Other里的AppleALC.kext，就需要注入layout-id为56，但是我发现用config.plist注入56是没用的，我又尝试在SSDT-config.aml中修改layout-id为56，此时layout-id依然为1，然而多了一个叫做layout-id-audio的系统变量，此时同样是没有声音的。所以我猜测可能XPS9360是不能用普通的方式注入layout-id的。
+b.如果使用kext/Other里的AppleALC.kext，就需要注入layout-id为56，但是我发现用config.plist注入56是没用的，我又尝试在SSDT-config.aml中修改layout-id为56，此时layout-id依然为1，然而多了一个叫做layout-id-audio的系统变量，此时同样是没有声音的。所以我猜测可能XPS9360是不能用普通的方式注入layout-id的。但是按常理来讲，仿冒AppleALC这种方法应该式最完美的，虽然没有见过，但我猜测体验接近原生。但目前还不知道如何实现。
 <br>
 关于其他的注入方法，如果各位有妙招，欢迎留言。
 
