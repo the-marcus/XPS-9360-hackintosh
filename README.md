@@ -9,7 +9,7 @@ Intel i7-8550U<br>
 3200X1800 QHD Sharp<br>
 DW1560 network card<br>
 BIOS 2.9.0 <br>
-MACOS 10.14.1 Mojave beta 4 <br>
+MACOS 10.14.1 Mojave beta <br>
 
 
 ## 安装
