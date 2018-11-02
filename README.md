@@ -62,7 +62,7 @@ b.如果使用kext/Other里的AppleALC.kext，就需要注入layout-id为56，�
 ```
 以隐藏多余启动项，需要显示按F3即可<br>
 4、在KernelToPatch中添加相关代码去掉lilu输出信息以查看panic原因。<br>
-5、可以删除VoodooPS2Controller.kext，替换为AppleSmartTouchPad.kext(在kext文件夹里)。原因是睡眠后在锁屏界面键盘无法使用，替换后解决。<br>
+5、可以删除VoodooPS2Controller.kext，替换为AppleSmartTouchPad.kext(在kext文件夹里)。两者的操作习惯略有不同，option和command的位置是相反的。替换的主要原因是睡眠后在锁屏界面键盘无法使用，替换后解决。<br>
 6、添加启动参数dart=0，防止IONVMeFamily的panic发生（目前还不清楚原因）。<br>
 7、添加了-v(啰嗦模式)，不加的话，开机经常卡在进度条那里，加了之后反而没事了。<br>
 8、开启了fast模式，没有clover界面，直接开机，这里请按需修改。<br>
