@@ -20,16 +20,16 @@ MACOS 10.14.1 Mojave beta <br>
 我的固态会报IONVMeFamily.kext(2.1)的panic，采用了多种办法，最后最有效的是加一个boot参数dart=0，暂时还不明白是什么原理。遇到相同情况的可以试一试。
 <br>
 3、使用黑果小兵10.14.1镜像制作启动盘安装。<br>
-4、安装过程中，第一次重启后，若安装过程中出现<br>
+4、安装过程中，第一次重启后，若安装过程卡在下面的代码<br>
 ```
 IOConsoleUsers: gIOScreenLockState 3, hs 0, bs 0, nov 0, sm 0x0
 ```
-在clover界面的option的Graphic Injector中将injectIntel前面的对勾去掉。<br>
-5、接下来就是安装到硬盘了，一般第一次安装到硬盘时会直接报错，这时候点击重新启动，再安装一次，这次会在安装结束时报错，不要紧，
+解决办法是：在clover界面的option的Graphic Injector中将injectIntel前面的对勾去掉。<br>
+5、接下来就是安装到硬盘了，一般第一次安装到硬盘时会直接报错，这时候点击重新启动，再安装一次，这次会在安装结束时报错，不要紧，重启即可进入系统，然后
 直接将我的Clover文件拷贝到ESP分区的EFI文件夹下，设置好启动顺序，就可以顺利进入MAC系统了。<br>
 6、接下来就是修改序列号、重建缓存以及修复屏幕等操作了这里不再赘述，~~其中注意的是，在今后的使用中，若开机时出现panic，
 需要根据不同的报错，将对应的驱动从S/L/E中复制到Clover文件的/kexts/Others中，其他的不需要动，~~
-这里不推荐使用KextUtility.app做转移驱动、重建缓存等操作，建议用命令行，因为这个kextutility.app这个软件已经很旧了，high sierra 和mojave一般要把驱动转移到/L*/E*里面，而不是/S*/L*/E*。下面介绍几个常用的命令：
+这里不推荐使用KextUtility.app做转移驱动、重建缓存等操作，建议用命令行，因为这个kextutility.app这个软件已经很旧了，high sierra和mojave等新版mac系统一般都要把驱动转移到/L*/E*里面，而不是/S*/L*/E*。下面介绍几个常用的命令：
 <br>
 >转移kext:  先cd到驱动所在目录，然后使用 sudo cp -R XXXX.kext /L*/E*<br>
 >重建缓存：sudo kextcache -i /    
