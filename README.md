@@ -71,7 +71,7 @@ b.如果使用kext/Other里的AppleALC.kext，就需要注入layout-id为56，�
 ## 关于Mac OS更新
 可直接进行系统更新，只是由于本机型在clover中的配置的是2018款mbp，它是带有touch bar的，所以更新之后开机会让你设置指纹，这时跳过即可，开机后执行XPS9360.sh，输入<br>
 `sudo /目录/XPS9360.sh --disable-touchid`
-<br>即可。不然下次可能会无法开机的。<br>
+<br>即可，然后重启。否则键盘快捷键如音量、亮度是无法使用的。<br>
 
 ## 致谢
 **[the-darkvoid](https://github.com/the-darkvoid/XPS9360-macOS)**<br>
