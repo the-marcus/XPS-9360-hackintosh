@@ -67,6 +67,11 @@ b.如果使用kext/Other里的AppleALC.kext，就需要注入layout-id为56，�
 7、添加了-v(啰嗦模式)，不加的话，开机经常卡在进度条那里，加了之后反而没事了。<br>
 8、开启了fast模式，没有clover界面，直接开机，这里请按需修改。<br>
 9、修改drivers64UEFI中多个文件，解决了很多panic。<br>
+<br>
+## 关于Mac OS更新
+可直接进行系统更新，只是由于本机型在clover中的配置的是2018款mbp，它是带有touch bar的，所以更新之后开机会让你设置指纹，这时跳过即可，开机后执行XPS9360.sh，输入<br>
+`sudo /目录/XPS9360.sh --disable-touchid`
+<br>即可。不然下次可能会无法开机的。<br>
 
 ## 致谢
 **[the-darkvoid](https://github.com/the-darkvoid/XPS9360-macOS)**<br>
